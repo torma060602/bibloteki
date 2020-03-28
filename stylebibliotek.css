@@ -1,0 +1,30 @@
+
+html {
+        font-family: 'Century Gothic', sans-serif;
+  width: 100%;
+}
+
+body {
+  margin: 5% auto 0 auto;
+  width: 90%;
+  max-width: 1125px;
+background-color: #FA565B}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 2.5%;
+}
+
+input,
+span,
+label,
+textarea {
+  font-family: 'Century Gothic', sans-serif;
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 22px;
+}
+
+    

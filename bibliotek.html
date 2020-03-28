@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylebibliotek.css">
+    <link rel="icon" href="unnamed.png">
+    <title>Bibliotek</title>
+</head>
+
+<body>
+    <h1>Mathias sitt bibliotek</h1>
+    <input type="text" id="navn_forfatter" placeholder="Navn på forfatter">
+    <input type="text" id="tittel_bok" placeholder="Tittel på bok">
+    <input type="text" id="navn_forlag" placeholder="Navn på forlag">
+    <input type="text" id="utgivelses_år" placeholder="Utgivelsesår">
+    <input type="button" onclick="submit_data()" value="Send inn data">
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCldDYMNcl-u7SNi-bEKY-Nr8YlvMkxM7Y",
+            authDomain: "bibliotek-77405.firebaseapp.com",
+            databaseURL: "https://bibliotek-77405.firebaseio.com",
+            projectId: "bibliotek-77405",
+            storageBucket: "bibliotek-77405.appspot.com",
+            messagingSenderId: "544445820541",
+            appId: "1:544445820541:web:850cea7a97dee53fa10b14"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let db = firebase.database();
+        let bibliotek = db.ref("bibliotek")
+
+        function submit_data() {
+            let forfatter_in = document.getElementById('navn_forfatter').value;
+            let tittel_in = document.getElementById('tittel_bok').value;
+            let forlag_in = document.getElementById('navn_forlag').value;
+            let utgitt_in = document.getElementById('utgivelses_år').value;
+            bibliotek.push({
+                forfatter_navn: forfatter_in,
+                tittel: tittel_in,
+                forlag: forlag_in,
+                utgivelsesår: utgitt_in,
+
+            });
+            window.alert("Dataen din er lagt til")
+        }
+    </script>
+
+</body></html>
